@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Student Registration Form</h1>
+        <form action="/post" method="post">
+            <form action="registration-success.html">
+                <img src="bccl.png" class="img" alt="">
+
+                <div class="fields">
+                    <header>Register Here</header>
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Full Name:</strong></label>
+                            <input type="text" placeholder="Enter Your First Name" id="myname" name="fullname"
+                                onkeyup="validateMyName()">
+                        </div>
+                        <span id="myname-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Mother's Name:</strong></label>
+                            <input type="text" placeholder="Enter Your Last Name" id="mname" name="mothername"
+                                onkeyup="validateMName()">
+                        </div>
+                        <span id="mname-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Father's Name:</strong></label>
+                            <input type="text" placeholder="Enter Your Last Name" id="fname" name="fathername"
+                                onkeyup="validateFName()">
+                        </div>
+                        <span id="fname-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Date of Birth:</strong></label>
+                            <input type="date" id="dob" name="dob" onchange="validateDOB()">
+                        </div>
+                        <span id="dob-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Email Id:</strong></label>
+                            <input type="email" placeholder="Enter Your Email Id" id="email-id" name="email"
+                                onkeyup="validateEmail()">
+                        </div>
+                        <span id="email-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Mobile No.:</strong></label>
+                            <input type="tel" placeholder="Enter your mobile number" id="phone-no" name="phoneno"
+                                onkeyup="validatePhone()">
+                        </div>
+                        <span id="mobile-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Gender:</strong></label>
+                            <input type="radio" style="flex-basis: 0%; margin: 0 10px;" name="gender" value="m"
+                                id="male" onkeyup="validateGender()">
+                            <label for="male">Male</label>
+                            <input type="radio" style="flex-basis: 0%; margin: 0 10px;" name="gender" value="f"
+                                id="female" onkeyup="validateGender()">
+                            <label for="female">Female</label>
+                        </div>
+                        <span id="gender-error"></span>
+                    </div>
+
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><Strong>Category</Strong></label>
+                            <select name="category" id="category-name" name="category" onclick="validCategory()">
+                                <option value="select category">Select category</option>
+                                <option value="OBC">OBC</option>
+                                <option value="ST">ST</option>
+                                <option value="SC">SC</option>
+                                <option value="Genral">Genral</option>
+                            </select>
+                        </div>
+                        <span id="category-error"> </span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Country:</strong></label>
+                            <input type="text" placeholder="Enter Your Country Name" name="country" id="country"
+                                onkeyup="validateCountry()">
+                        </div>
+                        <span id="country-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>State:</strong></label>
+                            <input type="text" placeholder="Enter Your State Name" name="state" id="state"
+                                onkeyup="validateState()">
+                        </div>
+                        <span id="state-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Pin Code:</strong></label>
+                            <input type="text" placeholder="Enter Your Pin Code" id="pincode" name="pincode"
+                                onkeyup="validatePinCode()">
+                        </div>
+                        <span id="pin-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>City:</strong></label>
+                            <input type="text" placeholder="Enter Your City" id="city" name="city"
+                                onkeyup="validateCity()">
+                        </div>
+                        <span id="city-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>District:</strong></label>
+                            <input type="text" placeholder="Enter Your District Name" name="district" id="district"
+                                onkeyup="validateDistrict()">
+                        </div>
+                        <span id="district-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label><strong>Hobbies:</strong></label>
+                        <textarea rows="5" placeholder="Enter Your Hobbies" id="hobbies" name="hobbies"
+                            onkeyup="validateHobbies()"></textarea>
+                    </div>
+                    <span id="hobbies-error"></span>
+
+                    <h2>Educational Details</h2>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Matriculation:</strong></label>
+                            <input type="text" placeholder="Enter Your Matriculation Board" id="board"
+                                name="matriculation" onkeyup="validateBoard()">
+                        </div>
+                        <span id="matriculation-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Percentage:</strong></label>
+                            <input type="text" placeholder="Enter Your Percentage" id="percent"
+                                name="matriculationpercent" onkeyup="validatePercent()">
+                        </div>
+                        <span id="percent-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Roll No.</strong></label>
+                            <input type="text" placeholder="Enter Your Roll" id="rollno" name="matriculationrollno"
+                                onkeyup="validateRollno()">
+                        </div>
+                        <span id="rollno-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Passing Year:</strong></label>
+                            <input type="text" placeholder="Enter Your Passing Year" id="passing"
+                                name="matriculationYear" onkeyup="validatePassingYear()">
+                        </div>
+                        <span id="passing-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Intermediate:</strong></label>
+                            <input type="text" placeholder="Enter Your Intermediate Board" id="Iboard"
+                                name="Intermediate" onkeyup="validateIBoard()">
+                        </div>
+                        <span id="intermediate-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Percentage:</strong></label>
+                            <input type="text" placeholder="Enter Your Percentage" id="Ipercent"
+                                name="Intermediatepercent" onkeyup="validateIPercent()">
+                        </div>
+                        <span id="Ipercent-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Roll No.</strong></label>
+                            <input type="text" placeholder="Enter Your Roll" id="Irollno" name="Intermediaterollno"
+                                onkeyup="validateIRollno()">
+                        </div>
+                        <span id="Irollno-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Passing Year:</strong></label>
+                            <input type="text" placeholder="Enter Your Passing Year" id="Ipassing"
+                                name="IntermediateYear" onkeyup="validateIPassingYear()">
+                        </div>
+                        <span id="Ipassing-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Upload photo:</strong></label>
+                            <input type="file" id="fileUpload" name="image" onkeyup="validatePicture()">
+                        </div>
+                        <span id="pic-error"></span>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label><strong>Upload sign:</strong></label>
+                            <input type="file" id="signUpload" name="image" onkeyup="validateSignature()">
+                        </div>
+                        <span id="sign-error"></span>
+                    </div>
+                </div>
+                <div class="submit">
+                    <button onclick="return validateForm()">Submit</button>
+                    <span id="submit-error"></span>
+                </div>
+            </form>
+        </form>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
